@@ -1,0 +1,23 @@
+body {
+    width: 100%;
+    height: 800px;
+}
+
+.bdtest {
+    border: 5px solid black;
+}
+
+.indexNav {
+    width: 100%;
+    height: 100%;
+}
+
+.fll {
+    float: left;
+}
+.talkNav {
+    width: 61%;
+}
+.articleNav {
+    width: 37%;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/vent/baseImp/base.js"></script>
+    <script type="text/javascript" src="/vent/articles/js/articleImp.js"></script>
+    <title>文章</title>
+</head>
+<body ng-app="articleApp">
+    <div ng-controller="articleCtrl">
+        <div ng-bind="articleInfo.articleTitle"></div>
+        <div ng-bind="articleInfo.articleContent"></div>
+    </div>
+</body>
+<script>
+    seajs.use('articleMod');
+</script>
+</html>
