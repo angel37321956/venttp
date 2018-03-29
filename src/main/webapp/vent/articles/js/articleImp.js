@@ -1,0 +1,1 @@
+document.write("<script language='javascript' src='/vent/articles/js/article.js'></script>");

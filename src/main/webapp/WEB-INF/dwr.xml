@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dwr>
+    <!--java代码和js方法的映射-->
+    <allow>
+        <create creator="new" javascript="SendMessage">
+            <param name="class" value="com.venttp.dwr.center.SendMessage" />
+        </create>
+    </allow>
+</dwr>
