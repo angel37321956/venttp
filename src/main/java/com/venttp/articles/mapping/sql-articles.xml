@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.venttp.articles.dao.ArticleInfoDao">
+
+    <select id="getIndexArticlesInfoList" resultType="com.venttp.articles.dto.ArticleInfoDTO">
+        SELECT
+            v.ARTICLE_NO articleNo,
+            v.ARTICLE_TITLE articleTitle,
+            v.ARTICLE_AUTHOR_CODE articleAuthorNo,
+            v.ARTICLE_AUTHOR_NAME articleAuthorName,
+            v.PUBLISH_TIME publishTime
+        FROM venttp_article_info v
+    </select>
+
+    <select id="getArticleInfo" parameterType="com.venttp.articles.dto.ArticleInfoDTO" resultType="com.venttp.articles.dto.ArticleInfoDTO">
+        SELECT
+            v.ARTICLE_NO articleNo,
+            v.ARTICLE_TITLE articleTitle,
+            v.ARTICLE_AUTHOR_CODE articleAuthorNo,
+            v.ARTICLE_AUTHOR_NAME articleAuthorName,
+            v.PUBLISH_TIME publishTime,
+            v.ARTICLE_CONTENT articleContent
+        FROM venttp_article_info v
+        WHERE v.ARTICLE_NO = #{articleNo}
+    </select>
+</mapper>
