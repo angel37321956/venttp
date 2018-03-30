@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.venttp.registlogin.dao.RigistLoginDao">
+
+    <insert id="registUser" parameterType="com.venttp.index.dto.UserCenterInfo" keyProperty="id">
+        INSERT INTO venttp_user_info(
+        CREATE_DATE,
+        CREATE_BY,
+        UPDATE_DATE,
+        UPDATE_BY,
+        USER_CODE,
+        USER_LEVEL,
+        USER_IP,
+        USER_ACCOUNT,
+        USER_PASS_WORD,
+        USER_NAME,
+        USER_AGE,
+        PHONE_NUM,
+        NICK_NAME,
+        E_MAIN,
+        CHINESE_NAME,
+        ENGLISH_NAME,
+        USER_ADDRESS,
+        USER_POSTAL_CODE,
+        BIRTHDAY)
+        VALUES(
+        #{createDate},
+        #{createBy},
+        #{updateDate},
+        #{updateBy},
+        #{userCode},
+        #{userLevel},
+        #{userIP},
+        #{userAccount},
+        #{userPassWord},
+        #{UserName},
+        #{userAge},
+        #{phoneNum},
+        #{nickName},
+        #{eMain},
+        #{chineseName},
+        #{englishName},
+        #{userAddress},
+        #{userPostalCode},
+        #{birthday}
+        )
+    </insert>
+
+    <!--<select id="validUserAccount" parameterType="com.venttp.index.dto.UserCenterInfo" resultType="java.lang.Integer">-->
+
+    <!--</select>-->
+</mapper>

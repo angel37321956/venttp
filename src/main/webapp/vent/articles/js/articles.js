@@ -20,7 +20,7 @@ define('articlesMod', function (require, exports) {
              */
             $scope.goToAriticlePage = function (articleNo) {
                 var src = $scope.data.contains.ARTICL_PAGE_URL + articleNo;
-                window.open(httpUrl.getPostUrl(src));
+                httpUrl.openPage(src);
             }
         })
     }

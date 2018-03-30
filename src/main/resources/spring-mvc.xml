@@ -8,8 +8,6 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!-- 自动扫描(自动注入) -->
-    <!--springmvc驱动扫描包  -->
-    <mvc:annotation-driven />
 
     <!--定义Controller扫描包,用户扫描Controller并创建代理对象 -->
     <context:component-scan base-package="com.venttp"/>
@@ -54,26 +52,27 @@
             </list>
         </property>
     </bean>
-    <!--json转换器(jackson版本，未使用)-->
+    <!--json转换器(jackson版本)-->
     <!--<bean id="mappingJacksonHttpMessageConverter"-->
-    <!--class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
-    <!--<property name="objectMapper">-->
-    <!--<bean class="com.fasterxml,jackson.databind.ObjectMapper">-->
-    <!--<property name="dateFormat">-->
-    <!--<bean class="java.text.SimpleDateFormat">-->
-    <!--<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />-->
+          <!--class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+        <!--<property name="supportedMediaTypes">-->
+            <!--<list>-->
+                <!--<value>application/json;charset=UTF-8</value>-->
+            <!--</list>-->
+        <!--</property>-->
     <!--</bean>-->
-    <!--</property>-->
-    <!--</bean>-->
-    <!--</property>-->
-    <!--<property name="supportedMediaTypes">-->
-    <!--<list>-->
-    <!--<value>text/html;charset=UTF-8</value>-->
-    <!--<value>application/json;charset=UTF-8</value>-->
-    <!--</list>-->
-    <!--</property>-->
+    <!--<bean-->
+            <!--class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">-->
+        <!--<property name="messageConverters">-->
+            <!--<list>-->
+                <!--<bean-->
+                        <!--class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />-->
+            <!--</list>-->
+        <!--</property>-->
     <!--</bean>-->
 
+    <!--springmvc驱动扫描包  -->
+    <mvc:annotation-driven />
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 有时我们需要访问JSP页面,可理解为在控制器controller的返回值加前缀和后缀,变成一个可用的URL地址 -->
         <property name="prefix" value="/WEB-INF/jsp/"/>

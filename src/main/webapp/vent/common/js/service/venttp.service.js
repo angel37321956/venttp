@@ -1,4 +1,5 @@
 define('venttp.module', function (require, exports) {
+    var contains = require('venttp.contains');
     exports.extend = function (md) {
         md.factory('dwrService', function () {
             var service = {};
@@ -14,8 +15,11 @@ define('venttp.module', function (require, exports) {
             var service = {};
             service.getPostUrl = function (url) {
                 return appUrl + url;
-            }
+            };
+            service.openPage = function (url) {
+                window.open(service.getPostUrl(url));
+            };
             return service;
         })
     }
-})
+});

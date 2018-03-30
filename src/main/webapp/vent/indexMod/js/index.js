@@ -1,7 +1,7 @@
 define('indexMod', function (require) {
     var contains = require('venttp.contains');
     var app = angular.module('indexApp', []);
-    app.controller('indexCtrl', function ($scope, $timeout) {
+    app.controller('indexCtrl', function ($scope, $timeout, httpUrl) {
         (function () {
             //方法
             $scope.fn = {};
@@ -40,8 +40,9 @@ define('indexMod', function (require) {
             });
         }
         
-        $scope.fn.regisst = function () {
-
+        $scope.fn.regist = function () {
+            var src = $scope.data.contains.REGIST_OAGE_URL;
+            httpUrl.openPage(src);
         }
     });
     require('talkMod').extend(app);

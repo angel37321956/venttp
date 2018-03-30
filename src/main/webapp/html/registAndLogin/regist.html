@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/vent/baseImp/base.js"></script>
+    <script type="text/javascript" src="/vent/registAndLogin/js/regist.js"></script>
+    <title>Title</title>
+</head>
+<body ng-app='registApp'>
+    <div ng-controller='registCtrl'>
+        <div>
+            <input type='text' ng-model='registInfo.userAccount' />用户账号
+            <input type='text' ng-model='registInfo.userPassWord' />用户密码
+            <input type='text' ng-model='registInfo.UserName' />用户名
+            <input type='text' ng-model='registInfo.userAge' />年龄
+            <input type='text' ng-model='registInfo.phoneNum' />手机号码
+            <input type='text' ng-model='registInfo.nickName' />昵称
+            <input type='text' ng-model='registInfo.eMain' />邮箱
+            <input type='text' ng-model='registInfo.chineseName' />姓名
+            <input type='text' ng-model='registInfo.englishName' />英文名
+            <input type='text' ng-model='registInfo.userAddress' />地址
+            <input type='text' ng-model='registInfo.userPostalCode' />邮编
+            <input type='text' ng-model='registInfo.birthday' />出生日期
+        </div>
+        <div>
+            <input type="button" ng-click="regist()" value="注册" />
+        </div>
+    </div>
+</body>
+<script>
+    seajs.use('registMod');
+</script>
+</html>

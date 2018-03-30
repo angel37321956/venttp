@@ -1,6 +1,7 @@
 package com.venttp.index.dto;
 
 import com.venttp.base.dto.AccountInfoDTO;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.Objects;
@@ -17,7 +18,7 @@ public class UserCenterInfo extends AccountInfoDTO {
     private String englishName;
 
     //年龄
-    private String userAge;
+    private Integer userAge;
 
     //地址
     private String userAddress;
@@ -58,11 +59,11 @@ public class UserCenterInfo extends AccountInfoDTO {
         this.englishName = englishName;
     }
 
-    public String getUserAge() {
+    public Integer getUserAge() {
         return userAge;
     }
 
-    public void setUserAge(String userAge) {
+    public void setUserAge(Integer userAge) {
         this.userAge = userAge;
     }
 
