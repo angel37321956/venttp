@@ -15,7 +15,7 @@ define('venttp.contains', function () {
          * 文章相关
          */
         //文章展示页面路径
-        ARTICL_PAGE_URL : '/html/article.html?articleNo=',
+        ARTICL_PAGE_URL : '/html/article/article.html?articleNo=',
         //首页文章列表接口
         INDEX_ARTICLE_LIST_API : 'getAticles/getIndexArticlesInfo',
         //根据文章编码调取文章信息
