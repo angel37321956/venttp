@@ -1,9 +1,23 @@
 package com.venttp.base.dto;
 
+import java.util.Date;
+
 public class AccountInfoDTO extends Venttpuid {
 
     //用户编码
     private String userCode;
+
+    //创建时间
+    private Date createDate;
+
+    //创建人
+    private String createBy;
+
+    //更新时间
+    private Date updateDate;
+
+    //更新人
+    private String updateBy;
 
     //用户IP地址
     private String userIP;
@@ -34,6 +48,37 @@ public class AccountInfoDTO extends Venttpuid {
         this.userCode = userCode;
     }
 
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+    }
 
     public String getUserIP() {
         return userIP;
