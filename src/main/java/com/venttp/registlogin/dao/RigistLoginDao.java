@@ -17,5 +17,5 @@ public interface RigistLoginDao {
      * @param centerInfo
      * @return
      */
-//    Integer validUserAccount (UserCenterInfo centerInfo);
+   Integer validAcconutOnly (UserCenterInfo centerInfo);
 }

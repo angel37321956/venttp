@@ -15,4 +15,11 @@ public interface RigistLoginService {
      */
     Map<String, String> registUser (UserCenterInfo userCenterInfo);
 
+    /**
+     * 校验账号的唯一性
+     * @param userCenterInfo
+     * @return
+     */
+    Map<String, String> validAcconutOnly (UserCenterInfo userCenterInfo);
+
 }

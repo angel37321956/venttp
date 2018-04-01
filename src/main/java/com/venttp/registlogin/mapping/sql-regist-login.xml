@@ -46,7 +46,12 @@
         )
     </insert>
 
-    <!--<select id="validUserAccount" parameterType="com.venttp.index.dto.UserCenterInfo" resultType="java.lang.Integer">-->
-
-    <!--</select>-->
+    <select id="validAcconutOnly" parameterType="com.venttp.index.dto.UserCenterInfo" resultType="java.lang.Integer">
+        SELECT
+        count( 1 )
+        FROM
+        venttp_user_info v
+        WHERE
+        v.USER_ACCOUNT = #{userAccount}
+    </select>
 </mapper>

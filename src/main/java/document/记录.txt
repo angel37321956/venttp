@@ -1,4 +1,4 @@
-
+需根据需要修改log4j2.xml中的LOG_HOME与FILE_NAME，否则默认为F:/log.log
 
 待开发：
 1、处理聊天记录的列队排序改为服务
