@@ -16,7 +16,7 @@
     <div>
         <div class="talkNav fll bdtest">
             <div ng-controller="findPersCtrl" ng-show="ctrl.showFindPers">
-                <input type="text" ng-model="userInfo.nickName" ng-keyup="enterEvent($event)">
+                <input type="text" ng-model="userInfo.nickName">
                 <button ng-click="fn.findPers()">star</button>
             </div>
             <div ng-controller="talkInfoCtrl" ng-show="ctrl.showTalkWin">

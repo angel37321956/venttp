@@ -21,12 +21,7 @@ define('indexMod', function (require) {
             //首页文章列表
             $scope.data.commonArticlesList = [];
         })();
-        $scope.enterEvent = function(e) {
-            var keycode = window.event?e.keyCode:e.which;
-            if(keycode==13){
-                console.log(21313);
-            }
-        }
+
         /**
          * 聊天记录处理
          * @param msg
@@ -43,7 +38,7 @@ define('indexMod', function (require) {
                 //更新$scope数据/界面的代码
                 talkInfoList.push(talkInfo);
             });
-        }
+        };
 
         /**
          * 跳转注册页面
@@ -51,7 +46,7 @@ define('indexMod', function (require) {
         $scope.fn.regist = function () {
             var src = $scope.data.contains.REGIST_OAGE_URL;
             httpUrl.openPage(src);
-        }
+        };
 
         /**
          * 跳转登录页面

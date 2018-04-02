@@ -11,4 +11,4 @@ define('publishArticleMod', function (require) {
         }
     })
     require('venttp.module').extend(app);
-})
+});

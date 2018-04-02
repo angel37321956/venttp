@@ -14,7 +14,7 @@ define('articleMod', function (require) {
             var url = httpUrl.getPostUrl(contains.ARTICLE_NO_INFO_API);
             var param = {
                 'articleNo' : $scope.articleNo
-            }
+            };
             $http.post(url, param).then(function (response) {
                 var data = response.data;
                 if (_.isEmpty(data)) {

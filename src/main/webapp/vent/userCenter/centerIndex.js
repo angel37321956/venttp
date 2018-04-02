@@ -11,4 +11,4 @@ define('userCenterMod', function (require) {
         }
     })
     require('venttp.module').extend(app);
-})
+});
