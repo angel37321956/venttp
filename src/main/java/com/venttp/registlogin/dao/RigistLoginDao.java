@@ -10,12 +10,19 @@ public interface RigistLoginDao {
      * @param userCenterInfo
      * @return
      */
-    Integer registUser (UserCenterInfo userCenterInfo);
+    Integer registUser (UserCenterInfo userCenterInfo) throws Exception;
 
     /**
      * 验证用户名是否已使用
      * @param centerInfo
      * @return
      */
-   Integer validAcconutOnly (UserCenterInfo centerInfo);
+   Integer validAcconutOnly (UserCenterInfo centerInfo) throws Exception;
+
+    /**
+     * 用户登录
+     * @param userCenterInfo
+     * @return
+     */
+   Integer userLogin (UserCenterInfo userCenterInfo) throws Exception;
 }

@@ -5,7 +5,6 @@ import com.venttp.index.dto.UserCenterInfo;
 import com.venttp.registlogin.dao.RigistLoginDao;
 import com.venttp.registlogin.service.RigistLoginService;
 import com.venttp.utils.StringUtils;
-import com.venttp.utils.logutil.LogUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +22,8 @@ public class RigistLoginServiceImpl implements RigistLoginService {
      * @return
      */
     @Override
-    public Map<String, String> registUser(UserCenterInfo userCenterInfo) {
-        Integer integer = 0;
-        try {
+    public Map<String, String> registUser(UserCenterInfo userCenterInfo) throws Exception {
+            Integer integer = 0;
             if (!validRegist(userCenterInfo)) {
                 //校验账号是否被使用，被使用则返回注册失败map结果集
                 VenttpContains.getRegistResultMap(integer, VenttpContains.REGIST_TYPE_FALG);
@@ -33,9 +31,7 @@ public class RigistLoginServiceImpl implements RigistLoginService {
             userCenterInfo.setCreateBy(userCenterInfo.getUserAccount());
             userCenterInfo.setUpdateBy(userCenterInfo.getUserAccount());
             integer = rigistLoginDao.registUser(userCenterInfo);
-        } catch (Exception e) {
-            LogUtils.error("用户注册异常信息:" + e);
-        }
+
         return VenttpContains.getRegistResultMap(integer, VenttpContains.REGIST_TYPE_FALG);
     }
 
@@ -44,7 +40,7 @@ public class RigistLoginServiceImpl implements RigistLoginService {
      * @param userCenterInfo
      * @return
      */
-    private Boolean validRegist (UserCenterInfo userCenterInfo) {
+    private Boolean validRegist (UserCenterInfo userCenterInfo) throws Exception {
         Boolean result = true;
         if (StringUtils.isEquals(VenttpContains.FAILED_FLAG, validAcconutOnly(userCenterInfo).get(VenttpContains.RESULT_CODE))){
             //校验账号是否被使用，被使用则返回false
@@ -59,8 +55,19 @@ public class RigistLoginServiceImpl implements RigistLoginService {
      * @return
      */
     @Override
-    public Map<String, String> validAcconutOnly(UserCenterInfo userCenterInfo) {
+    public Map<String, String> validAcconutOnly(UserCenterInfo userCenterInfo) throws Exception {
         Integer integer = rigistLoginDao.validAcconutOnly(userCenterInfo);
         return VenttpContains.getRegistResultMap(integer, VenttpContains.VALID_ACCOUNT_FLAG);
+    }
+
+    /**
+     * 用户登录
+     * @param userCenterInfo
+     * @return
+     */
+    @Override
+    public Map<String, String> userLogin(UserCenterInfo userCenterInfo) throws Exception {
+        Integer integer = rigistLoginDao.userLogin(userCenterInfo);
+        return VenttpContains.getRegistResultMap(integer, VenttpContains.LOGIN_FLAG);
     }
 }

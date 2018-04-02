@@ -35,12 +35,22 @@ public class VenttpContains {
     public static final String VALID_ACCOUNT_FAILED_MSG = "该账号已使用";
 
     /**
+     * 登录信息返回常量
+     */
+    //登录成功消息
+    public static final String LOGIN_SUCCESS_MSG = "登录成功";
+    //登录失败消息
+    public static final String LOGIN_FAILED_MSG = "登录失败";
+
+    /**
      * 返回map结果集相关功能常量
      */
     //返回注册信息map标志
     public static final String REGIST_TYPE_FALG = "regist";
     //返回校验账号唯一性map标志
     public static final String  VALID_ACCOUNT_FLAG = "validAccount";
+    //返回登录结果map标志
+    public static final String LOGIN_FLAG = "login";
 
     /**
      * 返回map通用方法
@@ -56,6 +66,10 @@ public class VenttpContains {
         if (StringUtils.isEquals(VALID_ACCOUNT_FLAG, type)) {
             //校验账号是否已注册方法，0表示未注册，则调用相应的方法
             resultMap = integer == 0 ? getValidAccountSuccessMap(resultMap) : getValidAccountFailedMap(resultMap);
+        }
+        if (StringUtils.isEquals(LOGIN_FLAG, type)) {
+            //返回登录结果,0表示登录失败，未注册
+            resultMap = integer == 0 ? getLoginFailedMap(resultMap) : getLoginSuccessMap(resultMap);
         }
         return resultMap;
     }
@@ -83,9 +97,17 @@ public class VenttpContains {
         handleResultMap(resultMap, SUCCESS_FLAG, VALID_ACCOUNT_SUCCESS_MSG);
         return resultMap;
     }
-
     private static Map<String, String> getValidAccountFailedMap (Map<String, String> resultMap) {
         handleResultMap(resultMap, FAILED_FLAG, VALID_ACCOUNT_FAILED_MSG);
+        return resultMap;
+    }
+
+    private static Map<String, String> getLoginSuccessMap (Map<String, String> resultMap) {
+        handleResultMap(resultMap, SUCCESS_FLAG, LOGIN_SUCCESS_MSG);
+        return resultMap;
+    }
+    private static Map<String, String> getLoginFailedMap (Map<String, String> resultMap) {
+        handleResultMap(resultMap, FAILED_FLAG, LOGIN_FAILED_MSG);
         return resultMap;
     }
 

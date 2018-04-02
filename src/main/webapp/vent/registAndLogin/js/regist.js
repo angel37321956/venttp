@@ -6,9 +6,6 @@ define('registMod', function (require) {
             $scope.registInfo = {};
         })();
         $scope.regist = function () {
-            // var registInfo = {
-            //     'userAccount' : 'angel123456'
-            // }
             var registInfo = JSON.stringify($scope.registInfo);
             var url = httpUrl.getPostUrl(contains.USER_REGIST_API);
             $http.post(url, registInfo).then(function (response) {

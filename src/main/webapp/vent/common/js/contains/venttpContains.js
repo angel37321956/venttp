@@ -20,13 +20,18 @@ define('venttp.contains', function () {
         ARTICLE_NO_INFO_API : 'getAticles/getArticleInfo',
         //注册用户信息接口
         USER_REGIST_API : 'registLogin/registUser',
+        //用户登录接口
+        USER_LOGIN_API : 'registLogin/userLogin',
 
         /**
          * 页面跳转路径
          */
         //文章展示页面路径
         ARTICL_PAGE_URL : '/html/article/article.html?articleNo=',
-        REGIST_OAGE_URL : '/html/registAndLogin/regist.html'
+        //注册页面路径
+        REGIST_OAGE_URL : '/html/registAndLogin/regist.html',
+        //登录页面路径
+        USER_LOGIN_URL : 'html/registAndLogin/login.html'
     };
     return CONTAINS;
 });

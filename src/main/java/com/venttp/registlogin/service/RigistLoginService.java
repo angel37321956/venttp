@@ -13,13 +13,20 @@ public interface RigistLoginService {
      * @param userCenterInfo
      * @return
      */
-    Map<String, String> registUser (UserCenterInfo userCenterInfo);
+    Map<String, String> registUser (UserCenterInfo userCenterInfo) throws Exception;
 
     /**
      * 校验账号的唯一性
      * @param userCenterInfo
      * @return
      */
-    Map<String, String> validAcconutOnly (UserCenterInfo userCenterInfo);
+    Map<String, String> validAcconutOnly (UserCenterInfo userCenterInfo) throws Exception;
+
+    /**
+     * 用户登录
+     * @param userCenterInfo
+     * @return
+     */
+    Map<String, String> userLogin (UserCenterInfo userCenterInfo) throws Exception;
 
 }

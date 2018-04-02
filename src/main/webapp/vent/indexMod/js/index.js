@@ -39,9 +39,20 @@ define('indexMod', function (require) {
                 talkInfoList.push(talkInfo);
             });
         }
-        
+
+        /**
+         * 跳转注册页面
+         */
         $scope.fn.regist = function () {
             var src = $scope.data.contains.REGIST_OAGE_URL;
+            httpUrl.openPage(src);
+        }
+
+        /**
+         * 跳转登录页面
+         */
+        $scope.fn.userLogin = function () {
+            var src = $scope.data.contains.USER_LOGIN_URL;
             httpUrl.openPage(src);
         }
     });
