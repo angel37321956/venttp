@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/vent/baseImp/base.js"></script>
+    <script type="text/javascript" src="/vent/userCenter/publishArticle/publishArticle.js"></script>
+    <title>Title</title>
+</head>
+<body ng-app="publishArticleApp">
+    <div ng-controller="publishArticleCtrl">
+        标题：<input type="text" ng-model="articleInfo.articleTitle">
+        内容：<textarea ng-model="articleInfo.articleContent"></textarea>
+        <input type="button" ng-click="publishArticle()" value="发表">
+    </div>
+</body>
+<script>
+    seajs.use('publishArticleMod');
+</script>
+</html>

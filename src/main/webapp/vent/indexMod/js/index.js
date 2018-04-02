@@ -21,7 +21,12 @@ define('indexMod', function (require) {
             //首页文章列表
             $scope.data.commonArticlesList = [];
         })();
-
+        $scope.enterEvent = function(e) {
+            var keycode = window.event?e.keyCode:e.which;
+            if(keycode==13){
+                console.log(21313);
+            }
+        }
         /**
          * 聊天记录处理
          * @param msg

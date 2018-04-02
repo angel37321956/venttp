@@ -5,6 +5,7 @@ import com.venttp.index.dto.UserCenterInfo;
 import com.venttp.registlogin.dao.RigistLoginDao;
 import com.venttp.registlogin.service.RigistLoginService;
 import com.venttp.utils.StringUtils;
+import com.venttp.utils.encrypt.EncryptForMD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,8 @@ public class RigistLoginServiceImpl implements RigistLoginService {
             }
             userCenterInfo.setCreateBy(userCenterInfo.getUserAccount());
             userCenterInfo.setUpdateBy(userCenterInfo.getUserAccount());
+            //密码md5加密
+            setMD5Pwd(userCenterInfo);
             integer = rigistLoginDao.registUser(userCenterInfo);
 
         return VenttpContains.getRegistResultMap(integer, VenttpContains.REGIST_TYPE_FALG);
@@ -67,7 +70,17 @@ public class RigistLoginServiceImpl implements RigistLoginService {
      */
     @Override
     public Map<String, String> userLogin(UserCenterInfo userCenterInfo) throws Exception {
+        setMD5Pwd(userCenterInfo);
         Integer integer = rigistLoginDao.userLogin(userCenterInfo);
         return VenttpContains.getRegistResultMap(integer, VenttpContains.LOGIN_FLAG);
+    }
+
+    /**
+     * 用户密码进行MD5加密
+     * @param userCenterInfo
+     */
+    private void setMD5Pwd (UserCenterInfo userCenterInfo) {
+        String pwd = EncryptForMD5.MD5(userCenterInfo.getUserPassWord());
+        userCenterInfo.setUserPassWord(pwd);
     }
 }

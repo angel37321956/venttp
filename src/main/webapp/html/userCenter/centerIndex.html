@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/vent/baseImp/base.js"></script>
+    <script type="text/javascript" src="/vent/userCenter/centerIndex.js"></script>
+    <title>Title</title>
+</head>
+<body ng-app="centerApp">
+    <div ng-controller="centerCtrl">
+        <input type="button" ng-click="fn.publishArticle()" value="文章发表" />
+    </div>
+</body>
+<script>
+    seajs.use('userCenterMod');
+</script>
+</html>
