@@ -9,6 +9,6 @@ define('userCenterMod', function (require) {
             var url = contains.PUBLISH_PAGE_URL;
             httpUrl.openPage(url);
         }
-    })
+    });
     require('venttp.module').extend(app);
 });

@@ -31,9 +31,9 @@ define('venttp.contains', function () {
          * 页面跳转路径
          */
         //文章展示页面路径
-        ARTICL_PAGE_URL : '/html/article/article.html?articleNo=',
+        ARTICL_PAGE_URL : 'html/article/article.html?articleNo=',
         //注册页面路径
-        REGIST_OAGE_URL : '/html/registAndLogin/regist.html',
+        REGIST_OAGE_URL : 'html/registAndLogin/regist.html',
         //登录页面路径
         USER_LOGIN_URL : 'html/registAndLogin/login.html',
         //登录成功跳转个人中心页面路径s

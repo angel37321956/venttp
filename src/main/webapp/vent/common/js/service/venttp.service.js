@@ -11,7 +11,10 @@ define('venttp.module', function (require, exports) {
             return service;
         });
         md.factory('httpUrl', function () {
-            var appUrl = 'http://localhost:8080/';
+            //本地idea启动
+            var appUrl = 'http://localhost:80/';
+            //部署tomcat启动
+            // var appUrl = 'http://192.168.131.24/';
             var service = {};
             service.getPostUrl = function (url) {
                 return appUrl + url;
