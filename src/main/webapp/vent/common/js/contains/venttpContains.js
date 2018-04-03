@@ -26,6 +26,8 @@ define('venttp.contains', function () {
         USER_REGIST_API : 'registLogin/registUser',
         //用户登录接口
         USER_LOGIN_API : 'registLogin/userLogin',
+        //发表文章列表
+        PUBLISH_ARTICLE_API : '/getAticles/publishArticle',
 
         /**
          * 页面跳转路径

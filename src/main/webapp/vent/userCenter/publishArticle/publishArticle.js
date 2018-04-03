@@ -6,8 +6,12 @@ define('publishArticleMod', function (require) {
             $scope.articleInfo = {};
         })();
         $scope.publishArticle = function () {
-            var url = contains.PUBLISH_PAGE_URL;
-            console.log(13123);
+            var url = contains.PUBLISH_ARTICLE_API;
+            var articleInfo = JSON.stringify($scope.articleInfo);
+            $http.post(url, articleInfo).then(function (response) {
+                var data = response.data;
+                console.log(data);
+            })
         }
     })
     require('venttp.module').extend(app);
