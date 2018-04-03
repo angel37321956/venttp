@@ -56,8 +56,9 @@ public class RigistLoginController {
         }
         //如果登录成功，将用户信息保存到session中
         if (StringUtils.isEquals(VenttpContains.SUCCESS_FLAG ,resulMap.get(VenttpContains.RESULT_CODE))){
-            HttpSession session = httpServletRequest.getSession(Boolean.FALSE);
-            session.setAttribute("loginInfo", userCenterInfo);
+            HttpSession session = httpServletRequest.getSession(Boolean.TRUE);
+            session.setAttribute(VenttpContains.LOGIN_SESSION_KEY, userCenterInfo.getUserAccount());
+            session.setMaxInactiveInterval(5);
         }
         return resulMap;
     }

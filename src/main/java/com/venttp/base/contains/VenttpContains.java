@@ -7,7 +7,11 @@ import java.util.Map;
 
 public class VenttpContains {
 
-    //常用字段常量
+    /**
+     * 常用字段常量
+     */
+    //session保存用户账号信息键值
+    public static final String LOGIN_SESSION_KEY = "userAccount";
 
     //返回结果标志
     public static final String RESULT_CODE = "resultCode";
@@ -51,6 +55,12 @@ public class VenttpContains {
     public static final String  VALID_ACCOUNT_FLAG = "validAccount";
     //返回登录结果map标志
     public static final String LOGIN_FLAG = "login";
+
+    /**
+     * 跳转路径
+     */
+    //未登录跳转登录页面
+    public static final String LOGIN_URL = "/html/registAndLogin/login.html";
 
     /**
      * 返回map通用方法

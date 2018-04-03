@@ -12,6 +12,13 @@ public class StringUtils {
         return true;
     }
 
+    public static Boolean isNotEquals (String str1, String str2) {
+        if (isEquals(str1, str2)) {
+            return false;
+        }
+        return true;
+    }
+
     public static Boolean isNull (String str) {
         if (null == str) {
             return true;
