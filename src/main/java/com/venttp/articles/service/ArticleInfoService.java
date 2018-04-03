@@ -2,6 +2,7 @@ package com.venttp.articles.service;
 
 import com.venttp.articles.dto.ArticleInfoDTO;
 import java.util.List;
+import java.util.Map;
 
 public interface ArticleInfoService {
 
@@ -16,4 +17,12 @@ public interface ArticleInfoService {
      * @return
      */
     ArticleInfoDTO getArticleInfo (ArticleInfoDTO articleInfoDTO) throws Exception;
+
+    /**
+     * 发表文章
+     * @param articleInfoDTO
+     * @return
+     * @throws Exception
+     */
+    Map<String, String> publishArticle (ArticleInfoDTO articleInfoDTO) throws Exception;
 }

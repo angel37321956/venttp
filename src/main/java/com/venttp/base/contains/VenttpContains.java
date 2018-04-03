@@ -47,6 +47,14 @@ public class VenttpContains {
     public static final String LOGIN_FAILED_MSG = "登录失败";
 
     /**
+     * 发表文章信息返回常量
+     */
+    //发表文章成功
+    public static final String PUBLISH_ARTICLE_SUCCESS_MSG = "发表成功";
+    //发表文章失败
+    public static final String PUBLISH_ARTICLE_FAILED_MSG = "发表失败";
+
+    /**
      * 返回map结果集相关功能常量
      */
     //返回注册信息map标志
@@ -55,6 +63,8 @@ public class VenttpContains {
     public static final String  VALID_ACCOUNT_FLAG = "validAccount";
     //返回登录结果map标志
     public static final String LOGIN_FLAG = "login";
+    //返回发表文章结果map标志
+    public static final String PUBLISH_ARTICLE_FLAG = "publishArticle";
 
     /**
      * 跳转路径
@@ -71,53 +81,24 @@ public class VenttpContains {
         Map<String, String> resultMap = new HashMap<String, String>();
         if (StringUtils.isEquals(REGIST_TYPE_FALG, type)) {
             //注册标志，返回1则表示成功注册，则调用相应方法
-            resultMap = integer == 1 ? getRegistSuccessMap(resultMap) : getRegistFailedMap(resultMap);
+            resultMap = integer == 1 ? handleResultMap(resultMap, SUCCESS_FLAG, RIGIST_SUCCESS_MSG)
+                    : handleResultMap(resultMap, FAILED_FLAG, RIGIST_FAILED_MSG);
         }
         if (StringUtils.isEquals(VALID_ACCOUNT_FLAG, type)) {
             //校验账号是否已注册方法，0表示未注册，则调用相应的方法
-            resultMap = integer == 0 ? getValidAccountSuccessMap(resultMap) : getValidAccountFailedMap(resultMap);
+            resultMap = integer == 0 ? handleResultMap(resultMap, SUCCESS_FLAG, VALID_ACCOUNT_SUCCESS_MSG)
+                    : handleResultMap(resultMap, FAILED_FLAG, VALID_ACCOUNT_FAILED_MSG);
         }
         if (StringUtils.isEquals(LOGIN_FLAG, type)) {
             //返回登录结果,0表示登录失败，未注册
-            resultMap = integer == 0 ? getLoginFailedMap(resultMap) : getLoginSuccessMap(resultMap);
+            resultMap = integer == 0 ? handleResultMap(resultMap, FAILED_FLAG, LOGIN_FAILED_MSG) :
+                    handleResultMap(resultMap, SUCCESS_FLAG, LOGIN_SUCCESS_MSG);
         }
-        return resultMap;
-    }
-
-    /**
-     * 返回注册信息map结果集
-     * @param resultMap
-     * @return
-     */
-    private static Map<String, String> getRegistSuccessMap (Map<String, String> resultMap) {
-        handleResultMap(resultMap, SUCCESS_FLAG, RIGIST_SUCCESS_MSG);
-        return resultMap;
-    }
-    private static Map<String, String> getRegistFailedMap (Map<String, String> resultMap) {
-        handleResultMap(resultMap, FAILED_FLAG, RIGIST_FAILED_MSG);
-        return resultMap;
-    }
-
-    /**
-     * 返回校验账号是否注册map结果集
-     * @param resultMap
-     * @return
-     */
-    private static Map<String, String> getValidAccountSuccessMap (Map<String, String> resultMap) {
-        handleResultMap(resultMap, SUCCESS_FLAG, VALID_ACCOUNT_SUCCESS_MSG);
-        return resultMap;
-    }
-    private static Map<String, String> getValidAccountFailedMap (Map<String, String> resultMap) {
-        handleResultMap(resultMap, FAILED_FLAG, VALID_ACCOUNT_FAILED_MSG);
-        return resultMap;
-    }
-
-    private static Map<String, String> getLoginSuccessMap (Map<String, String> resultMap) {
-        handleResultMap(resultMap, SUCCESS_FLAG, LOGIN_SUCCESS_MSG);
-        return resultMap;
-    }
-    private static Map<String, String> getLoginFailedMap (Map<String, String> resultMap) {
-        handleResultMap(resultMap, FAILED_FLAG, LOGIN_FAILED_MSG);
+        if (StringUtils.isEquals(PUBLISH_ARTICLE_FLAG, type)) {
+            //发表文章1表示发表成功，0表示发表失败
+            resultMap = integer == 1 ? handleResultMap(resultMap, SUCCESS_FLAG, PUBLISH_ARTICLE_SUCCESS_MSG)
+                    :handleResultMap(resultMap, FAILED_FLAG, PUBLISH_ARTICLE_FAILED_MSG);
+        }
         return resultMap;
     }
 
@@ -127,8 +108,9 @@ public class VenttpContains {
      * @param flag
      * @param msg
      */
-    private static void handleResultMap (Map<String, String> map, String flag, String msg) {
+    private static Map<String, String> handleResultMap (Map<String, String> map, String flag, String msg) {
         map.put(RESULT_CODE, flag);
         map.put(RESULT_MSG, msg);
+        return map;
     }
 }

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/getAticles")
@@ -49,5 +51,17 @@ public class ArticleInfoController {
             LogUtils.error("获取文章内容失败，异常信息:" + e);
         }
         return articleInfo;
+    }
+
+    @ResponseBody
+    @RequestMapping("/publishArticle")
+    public Map<String, String> publishArticle (@RequestBody ArticleInfoDTO articleInfoDTO) {
+        Map<String, String> resulMap = new HashMap<String, String>();
+        try {
+            resulMap = articleInfoService.publishArticle(articleInfoDTO);
+        } catch (Exception e) {
+            LogUtils.error("发表文章失败，异常信息:" + e);
+        }
+        return resulMap;
     }
 }

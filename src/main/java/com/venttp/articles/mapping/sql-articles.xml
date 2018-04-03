@@ -23,4 +23,21 @@
         FROM venttp_article_info v
         WHERE v.ARTICLE_NO = #{articleNo}
     </select>
+
+    <insert id="publishArticle" parameterType="com.venttp.articles.dto.ArticleInfoDTO" keyProperty="id">
+        INSERT INTO venttp_article_info(
+        ARTICLE_NO,
+        ARTICLE_TITLE,
+        ARTICLE_AUTHOR_CODE,
+        ARTICLE_AUTHOR_NAME,
+        PUBLISH_TIME,
+        ARTICLE_CONTENT)
+        VALUES(
+        #{articleNo},
+        #{articleTitle},
+        #{articleAuthorCode},
+        #{articleAuthorName},
+        #{publishTime},
+        #{articleContent})
+    </insert>
 </mapper>

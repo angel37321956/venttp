@@ -1,7 +1,6 @@
 package com.venttp.articles.dao;
 
 import com.venttp.articles.dto.ArticleInfoDTO;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,4 +19,11 @@ public interface ArticleInfoDao {
      * @return
      */
     ArticleInfoDTO getArticleInfo(ArticleInfoDTO articleInfoDTO) throws Exception;
+
+    /**
+     * 发表文章
+     * @return
+     * @throws Exception
+     */
+    Integer publishArticle(ArticleInfoDTO articleInfoDTO) throws Exception;
 }

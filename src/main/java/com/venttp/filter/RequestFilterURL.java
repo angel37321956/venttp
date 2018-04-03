@@ -7,6 +7,7 @@ public class RequestFilterURL {
                     "/html/userCenter/centerIndex.html",
                     "/vent/userCenter/centerIndex.js",
                     "/html/userCenter/publishArticle.html",
-                    "/vent/userCenter/publishArticle/publishArticle.js"
+                    "/vent/userCenter/publishArticle/publishArticle.js",
+                    "/getAticles/publishArticle"
             };
 }
