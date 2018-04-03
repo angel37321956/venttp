@@ -20,7 +20,7 @@ public class ArticleInfoServiceImpl implements ArticleInfoService{
      * @return
      */
     @Override
-    public List<ArticleInfoDTO> getIndexArticlesInfoList() {
+    public List<ArticleInfoDTO> getIndexArticlesInfoList() throws Exception {
         List<ArticleInfoDTO> indexArticlesInfo = articleInfoDao.getIndexArticlesInfoList();
         return indexArticlesInfo;
     }
@@ -30,7 +30,7 @@ public class ArticleInfoServiceImpl implements ArticleInfoService{
      * @return
      */
     @Override
-    public ArticleInfoDTO getArticleInfo(ArticleInfoDTO articleInfoDTO) {
+    public ArticleInfoDTO getArticleInfo(ArticleInfoDTO articleInfoDTO) throws Exception {
         ArticleInfoDTO articleInfo = articleInfoDao.getArticleInfo(articleInfoDTO);
         return articleInfo;
     }

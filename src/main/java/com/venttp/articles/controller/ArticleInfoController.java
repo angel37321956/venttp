@@ -2,12 +2,14 @@ package com.venttp.articles.controller;
 
 import com.venttp.articles.dto.ArticleInfoDTO;
 import com.venttp.articles.service.ArticleInfoService;
+import com.venttp.utils.logutil.LogUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -24,7 +26,13 @@ public class ArticleInfoController {
     @ResponseBody
     @RequestMapping("/getIndexArticlesInfo")
     public List<ArticleInfoDTO> getIndexArticlesInfoList () {
-        return articleInfoService.getIndexArticlesInfoList();
+        List<ArticleInfoDTO> indexArticlesInfoList = new ArrayList<ArticleInfoDTO>();
+        try {
+            indexArticlesInfoList = articleInfoService.getIndexArticlesInfoList();
+        } catch (Exception e) {
+            LogUtils.error("获取首页文章列表失败,异常信息:" + e);
+        }
+        return indexArticlesInfoList;
     }
 
     /**
@@ -34,6 +42,12 @@ public class ArticleInfoController {
     @ResponseBody
     @RequestMapping("/getArticleInfo")
     public ArticleInfoDTO getArticleInfo (@RequestBody ArticleInfoDTO articleInfoDTO) {
-        return articleInfoService.getArticleInfo(articleInfoDTO);
+        ArticleInfoDTO articleInfo = new ArticleInfoDTO();
+        try {
+            articleInfo = articleInfoService.getArticleInfo(articleInfoDTO);
+        } catch (Exception e) {
+            LogUtils.error("获取文章内容失败，异常信息:" + e);
+        }
+        return articleInfo;
     }
 }
