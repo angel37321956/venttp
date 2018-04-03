@@ -1,8 +1,9 @@
 package com.venttp.registlogin.controller;
 
+import com.venttp.base.contains.VenttpContains;
 import com.venttp.index.dto.UserCenterInfo;
 import com.venttp.registlogin.service.RigistLoginService;
-import com.venttp.registlogin.service.impl.RigistLoginServiceImpl;
+import com.venttp.utils.StringUtils;
 import com.venttp.utils.logutil.LogUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,12 +47,17 @@ public class RigistLoginController {
      */
     @ResponseBody
     @RequestMapping("/userLogin")
-    public Map<String, String> userLogin (@RequestBody UserCenterInfo userCenterInfo) {
+    public Map<String, String> userLogin (@RequestBody UserCenterInfo userCenterInfo, HttpServletRequest httpServletRequest) {
         Map<String, String> resulMap = new HashMap<String, String>();
         try {
             resulMap = rigistLoginService.userLogin(userCenterInfo);
         } catch (Exception e) {
             LogUtils.error("用户登录异常,异常信息:" + e);
+        }
+        //如果登录成功，将用户信息保存到session中
+        if (StringUtils.isEquals(VenttpContains.SUCCESS_FLAG ,resulMap.get(VenttpContains.RESULT_CODE))){
+            HttpSession session = httpServletRequest.getSession(Boolean.FALSE);
+            session.setAttribute("loginInfo", userCenterInfo);
         }
         return resulMap;
     }
