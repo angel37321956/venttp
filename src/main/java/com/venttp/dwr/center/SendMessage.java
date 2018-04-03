@@ -46,7 +46,6 @@ public class SendMessage {
                 for (ScriptSession scriptSession : scriptSessions) {
                     scriptSession.addScript(scriptBuffer);
                 }
-
             }
         });
 
