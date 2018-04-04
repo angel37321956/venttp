@@ -8,29 +8,38 @@
     <title>Title</title>
 </head>
 <body ng-app="indexApp">
-<div ng-controller="indexCtrl" class="indexNav bdtest">
-    <div>
-        <a href="javascript:void(0)" ng-click="fn.userLogin()">登录</a>
-        <a href="javascript:void(0)" ng-click="fn.regist()">注册</a>
+<div ng-controller="indexCtrl" class="indexNav ofh">
+    <div class="wb88 bdb mb20 ofh mr80 pb6">
+        <a href="javascript:void(0)" ng-click="fn.userLogin()" class="fr">登录</a>
+        <a href="javascript:void(0)" ng-click="fn.regist()" class="fr mr10">注册</a>
     </div>
     <div>
-        <div class="talkNav fll bdtest">
-            <div ng-controller="findPersCtrl" ng-show="ctrl.showFindPers">
-                <input type="text" ng-model="userInfo.nickName">
-                <button ng-click="fn.findPers()">star</button>
-            </div>
-            <div ng-controller="talkInfoCtrl" ng-show="ctrl.showTalkWin">
-                <div ng-repeat="item in data.talkInfoList track by $index">
-                    <div ng-bind="item.time"></div>
-                    <div ng-bind="item.msg"></div>
+        <div class="talkNav fl pl20">
+            <div ng-controller="findPersCtrl" ng-show="ctrl.showFindPers" class="fdDiv h60 ofh">
+                <div class="fdCenter fdBG bdr">
+                    <input class="bdr" type="text" ng-model="userInfo.nickName"
+                       placeholder="输入昵称匹配聊天">
+                </div>
+                <div>
+                    <button ng-click="fn.findPers()" class="bdr w60 h60">匹配</button>
                 </div>
             </div>
-            <div ng-controller="talkCtrl" ng-show="ctrl.showTalkWin">
-                <input type="text" ng-model="msg">
-                <button type="button" ng-click="fn.send()">test</button>
+            <div>
+                <div id="talkInfo" ng-controller="talkInfoCtrl" ng-show="ctrl.showTalkWin" class="h400 ofa bd">
+                    <div class="p10 mg h380">
+                        <div ng-repeat="item in data.talkInfoList track by $index">
+                            <div ng-bind="item.time"></div>
+                            <div ng-bind="item.msg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-controller="talkCtrl" ng-show="ctrl.showTalkWin" class="h100 mt20">
+                    <textarea ng-model="msg" class="txar h80 w520 fl ml15"></textarea>
+                    <button type="button" ng-click="fn.send()" class="ml10 h85 w80 bdr">发送</button>
+                </div>
             </div>
         </div>
-        <div class="articleNav fll bdtest" ng-controller="articlesCtrl">
+        <div class="articleNav fl ml10 bdl" ng-controller="articlesCtrl">
             <div ng-repeat="item in data.commonArticlesList track by $index">
                 <a href="javascript:void(0)" ng-click="goToAriticlePage(item.articleNo)">
                     <div ng-bind="item.articleTitle"></div>
