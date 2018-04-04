@@ -37,7 +37,13 @@ define('indexMod', function (require) {
             $timeout(function () {
                 //更新$scope数据/界面的代码
                 talkInfoList.push(talkInfo);
+                $scope.fn.scrollWindow();
             });
+        };
+        //----DIV滚动条置底
+        $scope.fn.scrollWindow=function(){
+            var _el = document.getElementById('talkInfo');
+            _el.scrollTop = _el.scrollHeight;
         };
 
         /**
