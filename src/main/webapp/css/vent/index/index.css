@@ -1,23 +1,131 @@
 body {
-    width: 100%;
-    height: 800px;
+    width: 98%;
 }
 
-.bdtest {
-    border: 5px solid black;
+.bd {
+    border: 1px solid black;
 }
 
 .indexNav {
     width: 100%;
     height: 100%;
+    min-width : 1000px;
 }
 
-.fll {
+.fl {
     float: left;
+}
+.fr {
+    float: right;
 }
 .talkNav {
     width: 61%;
 }
 .articleNav {
-    width: 37%;
+    width: 31%;
+    padding: 10px 12px 10px 30px;
 }
+.bdb {
+    border-bottom: 2px solid black;
+}
+.bdl {
+    border-left: 2px solid black;
+}
+.fdDiv {
+    width: 260px;
+    margin: 6px auto 6px auto;
+    overflow: hidden;
+}
+.fdBG {
+    width: 173px;
+    background-color: #FFCC22;
+}
+.fdCenter {
+    line-height: 60px;
+    padding-left: 6px;
+    float: left;
+}
+.bdr {
+    border-radius: 6px;
+    border-style: solid;
+    border-color: white;
+}
+.ofh {
+    overflow: hidden;
+}
+.ofa {
+    overflow: auto;
+}
+.txar {
+    resize: none;
+}
+.wb88 {
+    width: 88%;
+}
+.w60 {
+    width: 60px;
+}
+.w80 {
+    width: 80px;
+}
+.h60 {
+    height: 60px;
+}
+.h70 {
+    height: 70px;
+}
+.h80 {
+    height: 80px;
+}
+.h85 {
+    height: 85px;
+}
+.h100 {
+    height: 100px;
+}
+.h400 {
+    height: 400px;
+}
+.p10 {
+    padding: 10px;
+}
+.pl20 {
+    padding-left: 20px;
+}
+.w380 {
+    width: 380px;
+}
+.h380 {
+    height: 380px;
+}
+.w520 {
+    width: 520px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.ml15{
+    margin-left: 15px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.mr80 {
+    margin-right: 80px;
+}
+.mg {
+    margin: 10px;
+}
+.pb6 {
+    padding-bottom: 6px;
+}
+a:link{text-decoration:none ; color:black ;}
+a:visited {text-decoration:none ; color:black;}
+a:hover {text-decoration:none ; color:#00AEAE;}
+a:active {text-decoration:none ; color:black;}
