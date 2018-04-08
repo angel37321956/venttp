@@ -1,7 +1,5 @@
 package com.venttp.base.dto;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 
 public class AccountInfoDTO extends Venttpuid {
