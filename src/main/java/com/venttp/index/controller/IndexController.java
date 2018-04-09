@@ -1,6 +1,7 @@
 package com.venttp.index.controller;
 
 import com.venttp.index.dto.UserCenterInfo;
+import com.venttp.utils.RandomUtils;
 import com.venttp.utils.indexUtils.HandleOnlineUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,8 @@ public class IndexController {
     @ResponseBody
     @RequestMapping("/findPers")
     public UserCenterInfo login(@RequestBody UserCenterInfo userCenterInfo, HttpSession httpSession) {
-        userCenterInfo.setUserId(userCenterInfo.getNickName());
+        String UUID = RandomUtils.getUUID();
+        userCenterInfo.setUserId(UUID);
         UserCenterInfo onlineUser = HandleOnlineUser.findOnlineUser(userCenterInfo);
         httpSession.setAttribute("userInfo", onlineUser);
         return onlineUser;

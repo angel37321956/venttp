@@ -61,7 +61,7 @@ class DwrScriptSessionManagerUtil extends DwrServlet {
             public void sessionCreated(ScriptSessionEvent scriptSessionEvent) {
                 HttpSession session = WebContextFactory.get().getSession();
                 UserCenterInfo userCenterInfo = (UserCenterInfo) session.getAttribute("userInfo");
-                String userId = userCenterInfo.getNickName();
+                String userId = userCenterInfo.getUserId();
                 System.out.println("a message created!");
                 scriptSessionEvent.getSession().setAttribute("userId", userId);
             }

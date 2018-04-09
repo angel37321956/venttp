@@ -12,6 +12,8 @@ public class VenttpContains {
      */
     //session保存用户账号信息键值
     public static final String LOGIN_SESSION_KEY = "userAccount";
+    //默认几个人在线才可以开始匹配
+    public static final Integer ONLINE_PERS_COUNT = 1;
 
     //返回结果标志
     public static final String RESULT_CODE = "resultCode";
