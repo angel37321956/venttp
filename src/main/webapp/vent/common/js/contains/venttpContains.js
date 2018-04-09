@@ -6,8 +6,10 @@ define('venttp.contains', function () {
          */
         //接收标记
         RECEIVE_FLAG : 'receive',
-        //接收聊天记录标记，用于分离用户名与消息
+        //接收聊天记录标记，用于分离用户昵称与消息
         TALK_LIST_FLAG : 'venttpFlag',
+        //首次匹配成功发送自己昵称给对方
+        ONLINE_USER_INFO : 'onlineUserInfo',
         //请求返回成功标志常量
         RESPONSE_SUCCESS_CODE : '1',
         //请求返回失败标志常量

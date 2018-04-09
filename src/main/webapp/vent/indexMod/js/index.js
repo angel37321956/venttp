@@ -12,7 +12,9 @@ define('indexMod', function (require) {
             //数据
             $scope.data = {};
             //临时用户信息
-            $scope.userInfo = {};
+            $scope.fn.userInfo = {};
+            //匹配到的在线用户信息
+            $scope.fn.sendPers = {};
             //初始化聊天记录保存列表
             $scope.data.talkInfoList = [];
             //初始化常亮列表

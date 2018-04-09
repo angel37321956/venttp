@@ -11,18 +11,21 @@ define('findPersMod', function (require, exports) {
              * 随机寻找寻找在线聊天
              */
             $scope.fn.findPers = function () {
-                var nickName = $scope.userInfo.nickName;
+                var nickName = $scope.fn.userInfo.nickName;
                 if (_.isEmpty(nickName)) {
                     return;
                 }
                 var url = httpUrl.getPostUrl($scope.data.contains.FIND_ONLINE_PERS_API);
-                $http.post(url, $scope.userInfo).then(function (response) {
+                $http.post(url, $scope.fn.userInfo).then(function (response) {
                     var data = response.data;
-                    $scope.userInfo = data;
-                    if (_.isEmpty($scope.fn.sendPers) && !_.isEmpty(data.onlinePers)) {
-                        $scope.fn.sendPers = data.onlinePers.nickName;
+                    $scope.fn.userInfo = data;
+                    $scope.fn.dwrInit($scope.fn.userInfo.userId);
+                    if (!_.isEmpty(data.onlinePers)) {
+                        //如果匹配到在线用户，则将在线用户保存
+                        $scope.fn.sendPers = data.onlinePers;
+                        //发送自己的nickName给匹配到的用户
+                        $scope.fn.sendUserId($scope.fn.userInfo.nickName, $scope.fn.userInfo.userId);
                     }
-                    $scope.fn.dwrInit(nickName);
                     $scope.ctrl.showFindPers = false;
                     $scope.ctrl.showTalkWin = true;
                 })
