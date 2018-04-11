@@ -1,8 +1,10 @@
 package com.venttp.articles.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.venttp.base.dto.Venttpuid;
 
-import java.util.Date;
+import java.sql.Timestamp;
+
 
 public class ArticleInfoDTO extends Venttpuid{
 
@@ -19,7 +21,8 @@ public class ArticleInfoDTO extends Venttpuid{
     private String articleAuthorName;
 
     //发表日期
-    private Date publishTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Timestamp publishTime;
 
     //文章内容
     private String articleContent;
@@ -56,11 +59,11 @@ public class ArticleInfoDTO extends Venttpuid{
         this.articleAuthorName = articleAuthorName;
     }
 
-    public Date getPublishTime() {
+    public Timestamp getPublishTime() {
         return publishTime;
     }
 
-    public void setPublishTime(Date publishTime) {
+    public void setPublishTime(Timestamp publishTime) {
         this.publishTime = publishTime;
     }
 

@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class TimeUtils {
 
+    /**
+     * 获取当前时间
+     * @return
+     */
     public static Date getSysdate () {
         Date date = new Date(System.currentTimeMillis());
         return date;
     }
 
-    public static void main(String[] args) {
-        Date date = new Date(System.currentTimeMillis());
-        System.out.println(date);
-    }
 }

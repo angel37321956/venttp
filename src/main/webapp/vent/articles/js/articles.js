@@ -1,6 +1,6 @@
 define('articlesMod', function (require, exports) {
     exports.extend = function (md) {
-        md.controller('articlesCtrl', function ($scope, $http, httpUrl) {
+        md.controller('articlesCtrl', function ($scope, $http, httpUrl, $filter) {
             (function () {
                 /**
                  * 初始化主页文章列表
@@ -11,6 +11,8 @@ define('articlesMod', function (require, exports) {
                     if (_.isEmpty(data)) {
                         return;
                     }
+                    var newVar = $filter("date")('1522768135000', "yyyy-MM-dd HH:mm:ss");
+                    console.log(newVar);
                     $scope.data.commonArticlesList = data;
                 })
             })();
