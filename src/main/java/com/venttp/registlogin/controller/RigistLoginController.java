@@ -58,7 +58,6 @@ public class RigistLoginController {
         if (StringUtils.isEquals(VenttpContains.SUCCESS_FLAG ,resulMap.get(VenttpContains.RESULT_CODE))){
             HttpSession session = httpServletRequest.getSession(Boolean.TRUE);
             session.setAttribute(VenttpContains.LOGIN_SESSION_KEY, userCenterInfo.getUserAccount());
-            session.setMaxInactiveInterval(5);
         }
         return resulMap;
     }
