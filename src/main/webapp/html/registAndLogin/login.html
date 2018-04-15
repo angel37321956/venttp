@@ -5,15 +5,16 @@
     <script type="text/javascript" src="/vent/baseImp/base.js"></script>
     <script type="text/javascript" src="/vent/registAndLogin/js/login.js"></script>
     <title>Title</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet"  href="../../css/login.css">
 </head>
 <body ng-app="loginApp">
-    <div ng-controller="loginCtrl">
-        <div>
-            <input type='text' ng-model='loginInfo.userAccount' />用户账号
-            <input type='text' ng-model='loginInfo.userPassWord' />用户密码
-        </div>
-        <div>
-            <input type="button" ng-click="userLogin()" value="登录" />
+    <div class="lg-bg" ng-controller="loginCtrl">
+        <div class="lg-pan">
+            <input type='text' ng-model='loginInfo.userAccount' placeholder="用户名"/>
+            <input type='text' ng-model='loginInfo.userPassWord' placeholder="密码"/>
+
+            <button ng-click="userLogin()">登录</button>
         </div>
     </div>
 </body>
