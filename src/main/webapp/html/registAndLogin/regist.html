@@ -5,25 +5,29 @@
     <script type="text/javascript" src="/vent/baseImp/base.js"></script>
     <script type="text/javascript" src="/vent/registAndLogin/js/regist.js"></script>
     <title>Title</title>
+    <link rel="stylesheet" href="../../css/reset.css" >
+    <link rel="stylesheet" href="../../css/regist.css">
 </head>
 <body ng-app='registApp'>
-    <div ng-controller='registCtrl'>
-        <div>
-            <input type='text' ng-model='registInfo.userAccount' />用户账号
-            <input type='text' ng-model='registInfo.userPassWord' />用户密码
-            <input type='text' ng-model='registInfo.UserName' />用户名
-            <input type='text' ng-model='registInfo.userAge' />年龄
-            <input type='text' ng-model='registInfo.phoneNum' />手机号码
-            <input type='text' ng-model='registInfo.nickName' />昵称
-            <input type='text' ng-model='registInfo.eMain' />邮箱
-            <input type='text' ng-model='registInfo.chineseName' />姓名
-            <input type='text' ng-model='registInfo.englishName' />英文名
-            <input type='text' ng-model='registInfo.userAddress' />地址
-            <input type='text' ng-model='registInfo.userPostalCode' />邮编
-            <input type='text' ng-model='registInfo.birthday' />出生日期
+    <div class="rg-bg" ng-controller='registCtrl'>
+        <div class="re-title">
+            请填写注册信息
         </div>
-        <div>
-            <input type="button" ng-click="regist()" value="注册" />
+        <div class="rg-pan">
+            <input type='text' ng-model='registInfo.userAccount' placeholder="用户账号"/>
+            <input type='text' ng-model='registInfo.userPassWord' placeholder="用户密码"/>
+            <input type='text' ng-model='registInfo.UserName' placeholder="用户名" />
+            <input type='text' ng-model='registInfo.userAge' placeholder="年龄"/>
+            <input type='text' ng-model='registInfo.phoneNum' placeholder="手机号码"/>
+            <input type='text' ng-model='registInfo.nickName' placeholder="昵称"/>
+            <input type='text' ng-model='registInfo.eMain' placeholder="邮箱"/>
+            <input type='text' ng-model='registInfo.chineseName' placeholder="姓名" />
+            <input type='text' ng-model='registInfo.englishName' placeholder="英文名" />
+            <input type='text' ng-model='registInfo.userAddress' placeholder="地址"/>
+            <input type='text' ng-model='registInfo.userPostalCode' placeholder="邮编" />
+            <input type='text' ng-model='registInfo.birthday' placeholder="出生日期" />
+
+            <button ng-click="regist()" >注册</button>
         </div>
     </div>
 </body>
