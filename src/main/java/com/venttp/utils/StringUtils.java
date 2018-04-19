@@ -49,4 +49,12 @@ public class StringUtils {
         }
         return true;
     }
+
+    public static String handleString (Object ...objects) {
+        StringBuilder sb = new StringBuilder();
+        for (Object o : objects) {
+            sb.append(o);
+        }
+        return sb.toString();
+    }
 }

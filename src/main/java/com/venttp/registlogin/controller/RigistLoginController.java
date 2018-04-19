@@ -35,7 +35,7 @@ public class RigistLoginController {
         try {
             resulMap = rigistLoginService.registUser(userCenterInfo);
         } catch (Exception e) {
-            LogUtils.error("用户注册异常信息:" + e);
+            LogUtils.error("用户注册异常信息:", e);
         }
         return resulMap;
     }
@@ -52,7 +52,7 @@ public class RigistLoginController {
         try {
             resulMap = rigistLoginService.userLogin(userCenterInfo);
         } catch (Exception e) {
-            LogUtils.error("用户登录异常,异常信息:" + e);
+            LogUtils.error("用户登录异常,异常信息:", e);
         }
         //如果登录成功，将用户信息保存到session中
         if (StringUtils.isEquals(VenttpContains.SUCCESS_FLAG ,resulMap.get(VenttpContains.RESULT_CODE))){

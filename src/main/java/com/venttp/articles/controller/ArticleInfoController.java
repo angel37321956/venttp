@@ -32,7 +32,7 @@ public class ArticleInfoController {
         try {
             indexArticlesInfoList = articleInfoService.getIndexArticlesInfoList();
         } catch (Exception e) {
-            LogUtils.error("获取首页文章列表失败,异常信息:" + e);
+            LogUtils.error("获取首页文章列表失败,异常信息:", e);
         }
         return indexArticlesInfoList;
     }
@@ -48,7 +48,7 @@ public class ArticleInfoController {
         try {
             articleInfo = articleInfoService.getArticleInfo(articleInfoDTO);
         } catch (Exception e) {
-            LogUtils.error("获取文章内容失败，异常信息:" + e);
+            LogUtils.error("获取文章内容失败，异常信息:", e);
         }
         return articleInfo;
     }
@@ -60,7 +60,7 @@ public class ArticleInfoController {
         try {
             resulMap = articleInfoService.publishArticle(articleInfoDTO);
         } catch (Exception e) {
-            LogUtils.error("发表文章失败，异常信息:" + e);
+            LogUtils.error("发表文章失败，异常信息:", e);
         }
         return resulMap;
     }

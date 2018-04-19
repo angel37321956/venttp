@@ -1,7 +1,6 @@
 package com.venttp.filter;
 
 import com.venttp.base.contains.VenttpContains;
-import com.venttp.index.dto.UserCenterInfo;
 import com.venttp.utils.StringUtils;
 
 import javax.servlet.Filter;
